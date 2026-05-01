@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+  background: #0a0e1a;
+  letter-spacing: -0.01em;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.font-boost {
+  letter-spacing: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(0, 212, 170, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 170, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+  position: relative;
+}
+
+.hero-grid::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(34, 211, 238, 0.15), transparent 38%),
+    radial-gradient(circle at 86% 22%, rgba(6, 182, 212, 0.11), transparent 35%);
+  z-index: 0;
+}
+
+.scan-shimmer {
+  background: linear-gradient(90deg, rgba(0, 212, 170, 0.1), rgba(0, 212, 170, 0.5), rgba(0, 212, 170, 0.1));
+  background-size: 1000px 100%;
+}
+
+.hero-ring-layer {
+  position: relative;
+  width: min(72vw, 880px);
+  aspect-ratio: 3 / 1;
+  opacity: 0.5;
+}
+
+.hero-ring {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  border-radius: 999px;
+  box-shadow: inset 0 0 30px rgba(34, 211, 238, 0.05);
+}
+
+.hero-ring-lg {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-ring-md {
+  width: 78%;
+  height: 78%;
+  top: 11%;
+}
+
+.hero-ring-sm {
+  width: 56%;
+  height: 56%;
+  top: 22%;
+}
+
+.hero-cubes-layer {
+  position: relative;
+  width: min(74vw, 920px);
+  height: 180px;
+}
+
+.hero-cube {
+  position: absolute;
+  display: block;
+  border: 1px solid rgba(56, 189, 248, 0.24);
+  background: linear-gradient(160deg, rgba(6, 182, 212, 0.18), rgba(15, 23, 42, 0.16));
+  box-shadow: 0 10px 28px rgba(2, 8, 23, 0.4);
+  transform-style: preserve-3d;
+}
+
+.hero-cube-a { width: 30px; height: 30px; left: 10%; top: 58%; transform: rotate(12deg); }
+.hero-cube-b { width: 24px; height: 24px; left: 28%; top: 20%; transform: rotate(-9deg); }
+.hero-cube-c { width: 36px; height: 36px; left: 48%; top: 64%; transform: rotate(17deg); }
+.hero-cube-d { width: 20px; height: 20px; left: 68%; top: 28%; transform: rotate(-12deg); }
+.hero-cube-e { width: 28px; height: 28px; left: 84%; top: 54%; transform: rotate(9deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-ring-layer,
+  .hero-cubes-layer {
+    opacity: 0.18;
+  }
+}
