@@ -12,8 +12,9 @@ Production-grade full-stack web directory and file discovery scanner.
 ## Monorepo
 
 ```
-/
+scanspy/
 ├── client/
+├── extension/
 ├── server/
 └── package.json
 ```
