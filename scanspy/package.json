@@ -1,10 +1,20 @@
 {
   "name": "scanspy",
   "version": "1.0.0",
-  "private": true,
+  "description": "Production-grade full-stack web directory and file discovery scanner",
+  "keywords": [
+    "scanner",
+    "web-security",
+    "directory-discovery",
+    "express",
+    "react",
+    "sse"
+  ],
+  "private": false,
   "workspaces": [
     "client",
-    "server"
+    "server",
+    "extension"
   ],
   "scripts": {
     "dev:client": "npm run dev --workspace client",
